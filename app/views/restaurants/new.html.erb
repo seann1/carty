@@ -1,9 +1,12 @@
-  <%= semantic_form_for @restaurant do |f| %>
-    <%= f.input :name, label: "Cart Name", required: true %>
-    <%= f.input :address %>
-    <%= f.input :website %>
-    <%= f.actions do %>
-      <%= f.action :submit, :as => :button, :button_html => { :class => "btn btn-default" } %>
-      <%= f.action :cancel, :as => :link %>
-    <% end %>
+  <%= form_for @restaurant do |f| %>
+    <%= f.label :name, "Cart Name" %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :address, "Street Address"%>
+    <%= f.text_field :address, class: "form-control" %>
+    <p>Portland, Oregon</p>
+    <%= f.label :zip, "Zip Code" %>
+    <%= f.text_field :zip, class: "form-control" %>
+    <%= f.label :website %>
+    <%= f.text_field :website, class: "form-control" %>
+    <%= f.submit "Create Cart Page", class: "btn btn-primary" %>
   <% end %>
