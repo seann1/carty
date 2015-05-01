@@ -1,4 +1,5 @@
   <%= form_for @restaurant do |f| %>
+  <div class="form-group">
     <%= f.label :name, "Cart Name" %>
     <%= f.text_field :name, class: "form-control" %>
     <%= f.label :address, "Street Address"%>
@@ -8,5 +9,6 @@
     <%= f.text_field :zip, class: "form-control" %>
     <%= f.label :website %>
     <%= f.text_field :website, class: "form-control" %>
+  </div>
     <%= f.submit "Create Cart Page", class: "btn btn-primary" %>
   <% end %>
