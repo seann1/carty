@@ -16,6 +16,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html, body {
+	height: 100%;
+}
 .notice {
 	position: fixed;
 	top: 0px;
@@ -24,6 +27,7 @@
 	background-color: #00ff59;
 	color: #aaffff;
 	font-size: 2em;
+	opacity: 50%;
 }
 
 .alert {
@@ -35,8 +39,13 @@
 	color: #aaffff;
 	font-size: 2em;
 	border-radius: 0px !important;
+	opacity: 50%;
 }
 
-.form-control {
-	border-radius: 0px !important;
+.outer-map {
+	height: 400px;
+}
+
+#map {
+	height: 400px;
 }
