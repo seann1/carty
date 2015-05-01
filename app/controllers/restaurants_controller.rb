@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.create(restaurants_params)
+    @restaurant = Restaurant.create(restaurants_params.merge(user_id: current_user.id))
     if @restaurant.valid?
       redirect_to restaurant_path(@restaurant)
     else
@@ -19,6 +19,10 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@restaurant) do |restaurant, marker|
+      marker.lat restaurant.latitude
+      marker.lng restaurant.longitude
+    end
   end
 
   def edit
